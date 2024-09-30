@@ -15,3 +15,19 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, 300px);
 }
+
+.btnAdd {
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  height: 80px;
+  width: 160px;
+  border-radius: 6px;
+  box-shadow: -4px 2px 8px 0px #35353565;
+  background-color: #00a2ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700;
+}
