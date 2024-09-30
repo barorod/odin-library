@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/normalize.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Odin Library</title>
+  </head>
+  <body>
+    <button class="btnAdd" type="button">Add book</button>
+
+    <dialog id="modal">
+      <div class="modalContent">
+        <div class="modalHeader">
+          <p>Add Book</p>
+          <button class="btnClose" autofocus>x</button>
+        </div>
+
+        <form action="/" method="post">
+          <div>
+            <label for="title">Book: </label
+            ><input type="text" name="title" id="title" />
+          </div>
+          <div>
+            <label for="author">Author: </label
+            ><input type="text" name="author" id="author" />
+          </div>
+          <div>
+            <label for="pages">Pages: </label
+            ><input type="number" name="pages" id="pages" />
+          </div>
+          <div class="readContainer">
+            <label for="read">Read: </label
+            ><input type="checkbox" name="read" min="0" id="read" />
+          </div>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </dialog>
+
+    <div class="container">
+      <header></header>
+      <div class="mainContent"></div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
