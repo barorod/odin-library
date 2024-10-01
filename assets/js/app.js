@@ -89,11 +89,13 @@ function createButton(text, classNames, onClick) {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  const formData = new FormData(form);
-  const title = formData.get('title');
-  const author = formData.get('author');
-  const pages = parseInt(formData.get('pages'));
-  const read = formData.get('read') === 'on';
+  //   const formData = new FormData(form);
+  //   const title = formData.get('title');
+  //   const author = formData.get('author');
+  //   const pages = parseInt(formData.get('pages'));
+  //   const read = formData.get('read') === 'on';
+
+  const { title, author, pages, read } = Object.fromEntries(new FormData(form));
 
   if (!title || !author || !pages) {
     alert('Please fill all fields');
