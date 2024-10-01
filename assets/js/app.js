@@ -62,7 +62,7 @@ function createBookElement(book, idx) {
     () => handleRead(book, readButton)
   );
 
-  const removeButton = createButton('Remove', 'btnRemove', () =>
+  const removeButton = createButton('Remove', ['btnRemove'], () =>
     handleRemove(idx, card)
   );
 
