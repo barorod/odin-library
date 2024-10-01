@@ -62,7 +62,9 @@ function createBookElement(book, idx) {
     () => handleRead(book, readButton)
   );
 
-  const removeButton = createButton('Remove', 'btnRemove', handleRemove);
+  const removeButton = createButton('Remove', 'btnRemove', () =>
+    handleRemove(idx, card)
+  );
 
   card.appendChild(readButton);
   card.appendChild(removeButton);
@@ -77,7 +79,10 @@ function handleRead(book, button) {
   button.classList.toggle('unreadStatus');
 }
 
-function handleRemove() {}
+function handleRemove(idx, card) {
+  library.splice(idx, 1);
+  mainContent.removeChild(card);
+}
 
 function renderBooks() {
   mainContent.innerHTML = '';
