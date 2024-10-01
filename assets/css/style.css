@@ -1,22 +1,24 @@
 body {
-  width: 1100px;
+  width: 100%;
+  max-width: 1100px;
   background-color: rgb(228, 228, 228);
   margin: 0 auto;
-  height: 100vh;
-  position: relative;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .mainContent {
+  margin-top: 8px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 16px;
   justify-items: center;
   justify-content: center;
+  overflow-y: auto;
 }
 
 @media (min-width: 992px) {
@@ -38,12 +40,13 @@ body {
 }
 
 .btnAdd {
-  position: absolute;
-  right: 0;
+  position: fixed;
+  right: 30px;
   bottom: 100px;
-  height: 80px;
+  height: auto;
+  min-height: 60px;
+  width: 80vw;
   max-width: 400px;
-  width: 100%;
   border-radius: 6px;
   box-shadow: -4px 2px 8px 0px #35353565;
   background-color: #00a2ff;
@@ -52,6 +55,25 @@ body {
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 700;
+  font-size: calc(14px + 0.5vw);
+  padding: 2% 4%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 768px) {
+  .btnAdd {
+    right: 5%;
+    bottom: 5%;
+    width: 90vw;
+  }
+}
+
+@media (hover: none) {
+  .btnAdd {
+    padding: 15px;
+  }
 }
 
 .card {
@@ -205,4 +227,60 @@ label[for='read'] {
   align-self: center;
   justify-content: center;
   gap: 5px;
+}
+
+header {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  background-color: #00a2ff;
+  padding: 20px;
+  color: white;
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 900;
+  }
+}
+
+.headerContent {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchContainer {
+  position: relative;
+  width: 300px;
+  input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 16px;
+    outline: none;
+    background-color: white;
+  }
+
+  input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+  }
+
+  i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
 }
