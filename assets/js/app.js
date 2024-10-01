@@ -41,7 +41,9 @@ function createBookElement(book, idx) {
     card.appendChild(element);
   });
 
-  // Add Buttons function
+  // Toggle Read Button
+
+  // Remove Button
 
   return card;
 }
