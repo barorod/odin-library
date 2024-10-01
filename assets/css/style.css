@@ -76,3 +76,89 @@ body {
     background-color: #d0d0d0;
   }
 }
+
+#modal {
+  width: 300px;
+  height: auto;
+  max-height: 300px;
+  border: none;
+  border-radius: 6px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#modal::backdrop {
+  background-color: hsla(0, 0%, 0%, 0.7);
+  backdrop-filter: blur(15px);
+}
+
+.modalHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 16px;
+}
+
+.modalContent {
+  color: white;
+  font-weight: 600;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  background-color: #00a2ff;
+  box-sizing: border-box;
+}
+
+.modalContent form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  row-gap: 12px;
+}
+
+form div {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+form label {
+  flex: 0 0 60px;
+  margin-right: 8px;
+}
+
+form input {
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+form > button {
+  display: block;
+  padding: 8px 16px;
+  align-self: center;
+  width: 150px;
+  margin-top: 16px;
+}
+
+input[type='checkbox'] {
+  flex: 0;
+}
+
+label[for='read'] {
+  flex: 0 0 0;
+}
+
+.readContainer {
+  align-self: center;
+  justify-content: center;
+  gap: 5px;
+}
