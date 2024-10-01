@@ -74,7 +74,12 @@ function handleRead() {}
 
 function handleRemove() {}
 
-function renderBooks() {}
+function renderBooks() {
+  mainContent.innerHTML = '';
+  library.forEach((book, idx) => {
+    mainContent.appendChild(createBookElement(book, idx));
+  });
+}
 
 function createButton(text, classNames, onClick) {
   const button = document.createElement('button');
