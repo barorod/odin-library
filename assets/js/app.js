@@ -59,7 +59,7 @@ function createBookElement(book, idx) {
   const readButton = createButton(
     book.read ? 'Unread' : 'Read',
     [book.read ? 'readStatus' : 'unreadStatus'],
-    handleRead
+    () => handleRead(book, readButton)
   );
 
   const removeButton = createButton('Remove', 'btnRemove', handleRemove);
@@ -70,7 +70,12 @@ function createBookElement(book, idx) {
   return card;
 }
 
-function handleRead() {}
+function handleRead(book, button) {
+  book.toggleRead();
+  button.textContent = book.read ? 'Unread' : 'Read';
+  button.classList.toggle('readStatus');
+  button.classList.toggle('unreadStatus');
+}
 
 function handleRemove() {}
 
@@ -111,6 +116,4 @@ form.addEventListener('submit', (e) => {
   modal.close();
   form.reset();
   renderBooks();
-
-  console.log(library);
 });
