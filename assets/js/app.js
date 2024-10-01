@@ -41,9 +41,23 @@ function createBookElement(book, idx) {
     card.appendChild(element);
   });
 
-  // Toggle Read Button
+  const readButton = createButton(
+    book.read ? 'Unread' : 'Read',
+    [book.read ? 'readStatus' : 'unreadStatus'],
+    handleRead
+  );
 
-  // Remove Button
+  const removeButton = createButton('Remove', 'btnRemove', handleRemove);
 
   return card;
+}
+
+function createButton(text, classNames, onClick) {
+  const button = document.createElement('button');
+  button.textContent = text;
+  button.classList.add(...classNames);
+
+  button.addEventListener('click', onClick);
+
+  return button;
 }
