@@ -1,5 +1,5 @@
 body {
-  width: 800px;
+  width: 1100px;
   background-color: rgb(228, 228, 228);
   margin: 0 auto;
   height: 100vh;
@@ -12,17 +12,38 @@ body {
 }
 
 .mainContent {
-  display: flex;
-  gap: 6px;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .mainContent {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .mainContent {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
 }
 
 .btnAdd {
   position: absolute;
   right: 0;
-  bottom: 20px;
+  bottom: 100px;
   height: 80px;
-  width: 160px;
+  max-width: 400px;
+  width: 100%;
   border-radius: 6px;
   box-shadow: -4px 2px 8px 0px #35353565;
   background-color: #00a2ff;
@@ -34,26 +55,30 @@ body {
 }
 
 .card {
-  flex: 1 0 auto;
   display: flex;
   flex-direction: column;
   gap: 5px;
   justify-content: center;
   background-color: #f9f9f9;
-  width: 250px;
+  width: 100%;
   border: 1px solid #ddd;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
   h2 {
     color: #333;
     font-weight: 700;
     font-size: 1.2rem;
+    width: 100%;
   }
 
   p {
     color: #414141;
     font-size: 1rem;
+    width: 100%;
   }
 
   p:nth-of-type(1)::before {
@@ -77,22 +102,23 @@ body {
   }
 }
 
-.unreadStatus::before {
+.unreadStatus::before,
+.readStatus::before {
   display: inline-block;
-  background-image: url('../icons/eye-off-outline.svg');
   background-size: 100%;
   width: 20px;
   height: 20px;
   content: '';
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.unreadStatus::before {
+  background-image: url('../icons/eye-off-outline.svg');
 }
 
 .readStatus::before {
-  display: inline-block;
   background-image: url('../icons/eye-outline.svg');
-  background-size: 100%;
-  width: 20px;
-  height: 20px;
-  content: '';
 }
 
 #modal {
