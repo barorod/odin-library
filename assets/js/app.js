@@ -104,4 +104,6 @@ form.addEventListener('submit', (e) => {
   modal.close();
   form.reset();
   renderBooks();
+
+  console.log(library);
 });
