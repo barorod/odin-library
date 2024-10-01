@@ -33,7 +33,7 @@ Book.prototype.toggleRead = function () {
 
 function createBookElement(book, idx) {
   const card = document.createElement('div');
-  card.classList.add('add');
+  card.classList.add('card');
 
   const elements = [
     {
